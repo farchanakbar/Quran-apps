@@ -11,6 +11,7 @@ abstract class Routes {
   static const DETAIL_JUZ = _Paths.DETAIL_JUZ;
   static const BOTTOM_BAR = _Paths.BOTTOM_BAR;
   static const JADWAL_SHOLAT = _Paths.JADWAL_SHOLAT;
+  static const DETAIL_JADWAL = _Paths.DETAIL_JADWAL;
 }
 
 abstract class _Paths {
@@ -23,4 +24,5 @@ abstract class _Paths {
   static const DETAIL_JUZ = '/detail-juz';
   static const BOTTOM_BAR = '/bottom-bar';
   static const JADWAL_SHOLAT = '/jadwal-sholat';
+  static const DETAIL_JADWAL = '/detail-jadwal';
 }

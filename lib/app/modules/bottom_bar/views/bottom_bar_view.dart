@@ -1,6 +1,7 @@
 import 'package:alquran/app/constants/color.dart';
 import 'package:alquran/app/modules/home/controllers/home_controller.dart';
 import 'package:alquran/app/modules/home/views/home_view.dart';
+import 'package:alquran/app/modules/jadwal_sholat/controllers/jadwal_sholat_controller.dart';
 import 'package:alquran/app/modules/jadwal_sholat/views/jadwal_sholat_view.dart';
 import 'package:flutter/material.dart';
 
@@ -36,6 +37,7 @@ class BottomBarView extends GetView<BottomBarController> {
   @override
   Widget build(BuildContext context) {
     Get.put(HomeController());
+    Get.put(JadwalSholatController());
     return Scaffold(
       body: PersistentTabView(
         context,

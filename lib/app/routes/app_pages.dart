@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 
 import '../modules/bottom_bar/bindings/bottom_bar_binding.dart';
 import '../modules/bottom_bar/views/bottom_bar_view.dart';
+import '../modules/detail_jadwal/bindings/detail_jadwal_binding.dart';
+import '../modules/detail_jadwal/views/detail_jadwal_view.dart';
 import '../modules/detail_juz/bindings/detail_juz_binding.dart';
 import '../modules/detail_juz/views/detail_juz_view.dart';
 import '../modules/detail_surah/bindings/detail_surah_binding.dart';
@@ -64,6 +66,11 @@ class AppPages {
       name: _Paths.JADWAL_SHOLAT,
       page: () => const JadwalSholatView(),
       binding: JadwalSholatBinding(),
+    ),
+    GetPage(
+      name: _Paths.DETAIL_JADWAL,
+      page: () => const DetailJadwalView(),
+      binding: DetailJadwalBinding(),
     ),
   ];
 }
