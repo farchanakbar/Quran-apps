@@ -1,23 +1,29 @@
+import 'package:alquran/app/modules/pages/doa/doa/views/doa_view.dart';
+import 'package:alquran/app/modules/pages/doa/doa_harian/views/doa_harian_view.dart';
 import 'package:get/get.dart';
 
 import '../modules/bottom_bar/bindings/bottom_bar_binding.dart';
 import '../modules/bottom_bar/views/bottom_bar_view.dart';
-import '../modules/detail_jadwal/bindings/detail_jadwal_binding.dart';
-import '../modules/detail_jadwal/views/detail_jadwal_view.dart';
-import '../modules/detail_juz/bindings/detail_juz_binding.dart';
-import '../modules/detail_juz/views/detail_juz_view.dart';
-import '../modules/detail_surah/bindings/detail_surah_binding.dart';
-import '../modules/detail_surah/views/detail_surah_view.dart';
-import '../modules/home/bindings/home_binding.dart';
-import '../modules/home/views/home_view.dart';
 import '../modules/introduction/bindings/introduction_binding.dart';
 import '../modules/introduction/views/introduction_view.dart';
-import '../modules/jadwal_sholat/bindings/jadwal_sholat_binding.dart';
-import '../modules/jadwal_sholat/views/jadwal_sholat_view.dart';
-import '../modules/last_read/bindings/last_read_binding.dart';
-import '../modules/last_read/views/last_read_view.dart';
-import '../modules/search/bindings/search_binding.dart';
-import '../modules/search/views/search_view.dart';
+import '../modules/pages/alquran/detail_juz/bindings/detail_juz_binding.dart';
+import '../modules/pages/alquran/detail_juz/views/detail_juz_view.dart';
+import '../modules/pages/alquran/detail_surah/bindings/detail_surah_binding.dart';
+import '../modules/pages/alquran/detail_surah/views/detail_surah_view.dart';
+import '../modules/pages/alquran/home/bindings/home_binding.dart';
+import '../modules/pages/alquran/home/views/home_view.dart';
+import '../modules/pages/alquran/last_read/bindings/last_read_binding.dart';
+import '../modules/pages/alquran/last_read/views/last_read_view.dart';
+import '../modules/pages/doa/asmaul_husna/bindings/asmaul_husna_binding.dart';
+import '../modules/pages/doa/asmaul_husna/views/asmaul_husna_view.dart';
+import '../modules/pages/doa/doa/bindings/doa_binding.dart';
+import '../modules/pages/doa/doa_harian/bindings/doa_harian_binding.dart';
+import '../modules/pages/doa/niat_sholat/bindings/niat_sholat_binding.dart';
+import '../modules/pages/doa/niat_sholat/views/niat_sholat_view.dart';
+import '../modules/pages/sholat/detail_jadwal/bindings/detail_jadwal_binding.dart';
+import '../modules/pages/sholat/detail_jadwal/views/detail_jadwal_view.dart';
+import '../modules/pages/sholat/jadwal_sholat/bindings/jadwal_sholat_binding.dart';
+import '../modules/pages/sholat/jadwal_sholat/views/jadwal_sholat_view.dart';
 
 part 'app_routes.dart';
 
@@ -43,11 +49,6 @@ class AppPages {
       binding: DetailSurahBinding(),
     ),
     GetPage(
-      name: _Paths.SEARCH,
-      page: () => const SearchView(),
-      binding: SearchBinding(),
-    ),
-    GetPage(
       name: _Paths.LAST_READ,
       page: () => const LastReadView(),
       binding: LastReadBinding(),
@@ -71,6 +72,26 @@ class AppPages {
       name: _Paths.DETAIL_JADWAL,
       page: () => const DetailJadwalView(),
       binding: DetailJadwalBinding(),
+    ),
+    GetPage(
+      name: _Paths.DOA_HARIAN,
+      page: () => const DoaHarianView(),
+      binding: DoaHarianBinding(),
+    ),
+    GetPage(
+      name: _Paths.DOA,
+      page: () => const DoaView(),
+      binding: DoaBinding(),
+    ),
+    GetPage(
+      name: _Paths.ASMAUL_HUSNA,
+      page: () => const AsmaulHusnaView(),
+      binding: AsmaulHusnaBinding(),
+    ),
+    GetPage(
+      name: _Paths.NIAT_SHOLAT,
+      page: () => const NiatSholatView(),
+      binding: NiatSholatBinding(),
     ),
   ];
 }

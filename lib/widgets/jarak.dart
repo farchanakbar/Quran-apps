@@ -13,7 +13,7 @@ class Jarak extends StatelessWidget {
       color: colorEmpat,
       margin: const EdgeInsets.only(top: 10, bottom: 10),
       height: 1,
-      width: Get.width * 0.9,
+      width: Get.width,
     );
   }
 }

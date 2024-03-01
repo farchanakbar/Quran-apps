@@ -3,7 +3,7 @@ import 'package:lottie/lottie.dart';
 import 'package:get/get.dart';
 
 import 'package:alquran/app/constants/color.dart';
-import 'package:alquran/app/routes/app_pages.dart';
+import '../../../routes/app_pages.dart';
 import '../controllers/introduction_controller.dart';
 
 class IntroductionView extends GetView<IntroductionController> {
@@ -20,18 +20,28 @@ class IntroductionView extends GetView<IntroductionController> {
       },
     );
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text(
-              'Al-Quran Apps',
-              style: TextStyle(
-                  fontSize: 25, fontWeight: FontWeight.bold, color: colorTiga),
-            ),
-            const Text('Created by Farchan Akbar'),
-            Lottie.asset('assets/lotties/intro-quran.json'),
-          ],
+      body: Container(
+        height: Get.height,
+        width: Get.width,
+        color: colorSatu,
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                'Al-Qur\'an Indonesia',
+                style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                    color: colorEmpat),
+              ),
+              const Text(
+                'Created by Farchan Akbar',
+                style: TextStyle(color: colorEmpat),
+              ),
+              Lottie.asset('assets/lotties/intro-quran.json'),
+            ],
+          ),
         ),
       ),
     );

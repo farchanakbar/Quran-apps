@@ -1,8 +1,10 @@
 import 'package:alquran/app/constants/color.dart';
-import 'package:alquran/app/modules/home/controllers/home_controller.dart';
-import 'package:alquran/app/modules/home/views/home_view.dart';
-import 'package:alquran/app/modules/jadwal_sholat/controllers/jadwal_sholat_controller.dart';
-import 'package:alquran/app/modules/jadwal_sholat/views/jadwal_sholat_view.dart';
+import 'package:alquran/app/modules/pages/doa/doa_harian/controllers/doa_harian_controller.dart';
+import 'package:alquran/app/modules/pages/doa/doa_harian/views/doa_harian_view.dart';
+import 'package:alquran/app/modules/pages/alquran/home/controllers/home_controller.dart';
+import 'package:alquran/app/modules/pages/alquran/home/views/home_view.dart';
+import 'package:alquran/app/modules/pages/sholat/jadwal_sholat/controllers/jadwal_sholat_controller.dart';
+import 'package:alquran/app/modules/pages/sholat/jadwal_sholat/views/jadwal_sholat_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -14,7 +16,7 @@ class BottomBarView extends GetView<BottomBarController> {
   const BottomBarView({Key? key}) : super(key: key);
 
   List<Widget> _buildScreens() {
-    return [const HomeView(), const JadwalSholatView()];
+    return [const HomeView(), const JadwalSholatView(), const DoaHarianView()];
   }
 
   List<PersistentBottomNavBarItem> _navBarsItems() {
@@ -31,6 +33,12 @@ class BottomBarView extends GetView<BottomBarController> {
         activeColorPrimary: colorEmpat,
         inactiveColorPrimary: colorTiga,
       ),
+      PersistentBottomNavBarItem(
+        icon: const Icon(Icons.library_books),
+        title: ("Doa Harian"),
+        activeColorPrimary: colorEmpat,
+        inactiveColorPrimary: colorTiga,
+      ),
     ];
   }
 
@@ -38,6 +46,7 @@ class BottomBarView extends GetView<BottomBarController> {
   Widget build(BuildContext context) {
     Get.put(HomeController());
     Get.put(JadwalSholatController());
+    Get.put(DoaHarianController());
     return Scaffold(
       body: PersistentTabView(
         context,
