@@ -16,7 +16,7 @@ class HomeController extends GetxController {
     await db.delete('bookmark', where: 'id = $id');
     update();
     Get.back();
-    Get.snackbar('Berhasil Dihapus', 'Bookmark berhasil dihapus');
+    Get.snackbar('Berhasil Dihapus', 'Penanda berhasil dihapus');
   }
 
   Future<List<Map<String, dynamic>>> getBookmark() async {

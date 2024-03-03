@@ -1,5 +1,7 @@
 import 'package:alquran/app/data/models/detail_surah.dart' as detail;
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import 'package:get/get.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
@@ -97,14 +99,16 @@ class DetailSurahView extends GetView<DetailSurahController> {
                                     IconButton(
                                       onPressed: () {
                                         Get.defaultDialog(
-                                          title: 'Bookmark',
-                                          middleText: 'Pilih jenis bookmark',
-                                          middleTextStyle:
-                                              const TextStyle(color: colorDua),
+                                          backgroundColor: colorDua,
+                                          title: 'Penanda Bacaan',
+                                          titleStyle: const TextStyle(
+                                              color: colorEmpat, fontSize: 20),
+                                          middleText:
+                                              'Pilih Jenis Penanda Bacaan',
+                                          middleTextStyle: const TextStyle(
+                                              color: colorEmpat, fontSize: 18),
                                           actions: [
                                             ElevatedButton(
-                                                style: ElevatedButton.styleFrom(
-                                                    backgroundColor: colorDua),
                                                 onPressed: () async {
                                                   await c.addBookmark(
                                                       true,
@@ -113,10 +117,9 @@ class DetailSurahView extends GetView<DetailSurahController> {
                                                       index);
                                                   homeC.update();
                                                 },
-                                                child: const Text('Last Read')),
+                                                child: const Text(
+                                                    'Terakhir Dibaca')),
                                             ElevatedButton(
-                                                style: ElevatedButton.styleFrom(
-                                                    backgroundColor: colorDua),
                                                 onPressed: () async {
                                                   await c.addBookmark(
                                                       false,
@@ -125,7 +128,8 @@ class DetailSurahView extends GetView<DetailSurahController> {
                                                       index);
                                                   homeC.update();
                                                 },
-                                                child: const Text('Bookmark')),
+                                                child: const Text(
+                                                    'Tandai Bacaan')),
                                           ],
                                         );
                                       },

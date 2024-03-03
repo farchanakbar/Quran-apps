@@ -139,24 +139,24 @@ class HomeView extends GetView<HomeController> {
                               if (lastRead != null) {
                                 Get.defaultDialog(
                                   backgroundColor: colorDua,
-                                  title: 'Delete last read',
-                                  titleStyle:
-                                      const TextStyle(color: colorEmpat),
-                                  middleText: 'are you sure to delete?',
-                                  middleTextStyle:
-                                      const TextStyle(color: colorEmpat),
+                                  title: 'Hapus Terakhir Dibaca',
+                                  titleStyle: const TextStyle(
+                                      color: colorEmpat, fontSize: 20),
+                                  middleText: 'apakah yakin mau dihapus?',
+                                  middleTextStyle: const TextStyle(
+                                      color: colorEmpat, fontSize: 18),
                                   actions: [
-                                    OutlinedButton(
+                                    ElevatedButton(
                                         onPressed: () {
                                           Get.back();
                                         },
-                                        child: const Text('Cancel')),
+                                        child: const Text('Tidak')),
                                     ElevatedButton(
                                         onPressed: () {
                                           c.deleteBookmark(lastRead['id']);
                                           Get.back();
                                         },
-                                        child: const Text('Delete'))
+                                        child: const Text('Hapus'))
                                   ],
                                 );
                               }
@@ -492,7 +492,27 @@ class HomeView extends GetView<HomeController> {
                                       const TextStyle(color: colorEmpat),
                                   trailing: IconButton(
                                       onPressed: () {
-                                        c.deleteBookmark(data['id']);
+                                        Get.defaultDialog(
+                                          backgroundColor: colorDua,
+                                          title: 'Hapus Penanda',
+                                          titleStyle: const TextStyle(
+                                              color: colorEmpat, fontSize: 20),
+                                          middleText: 'Hapus Penanda Bacaan?',
+                                          middleTextStyle: const TextStyle(
+                                              color: colorEmpat, fontSize: 18),
+                                          actions: [
+                                            ElevatedButton(
+                                                onPressed: () async {
+                                                  Get.back();
+                                                },
+                                                child: const Text('Tidak')),
+                                            ElevatedButton(
+                                                onPressed: () async {
+                                                  c.deleteBookmark(data['id']);
+                                                },
+                                                child: const Text('Hapus')),
+                                          ],
+                                        );
                                       },
                                       icon: const Icon(
                                         Icons.delete_forever,

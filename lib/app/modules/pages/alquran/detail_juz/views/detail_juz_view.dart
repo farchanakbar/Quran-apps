@@ -93,29 +93,31 @@ class DetailJuzView extends GetView<DetailJuzController> {
                                   IconButton(
                                     onPressed: () {
                                       Get.defaultDialog(
-                                        title: 'Bookmark',
-                                        middleText: 'Pilih jenis bookmark',
-                                        middleTextStyle:
-                                            const TextStyle(color: colorDua),
+                                        backgroundColor: colorDua,
+                                        title: 'Penanda Bacaan',
+                                        titleStyle: const TextStyle(
+                                            color: colorEmpat, fontSize: 20),
+                                        middleText:
+                                            'Pilih Jenis Penanda Bacaan',
+                                        middleTextStyle: const TextStyle(
+                                            color: colorEmpat, fontSize: 18),
                                         actions: [
                                           ElevatedButton(
-                                              style: ElevatedButton.styleFrom(
-                                                  backgroundColor: colorDua),
                                               onPressed: () async {
                                                 await c.addBookmark(true,
                                                     index + 1, ayat!, index);
                                                 homeC.update();
                                               },
-                                              child: const Text('Last Read')),
+                                              child: const Text(
+                                                  'Terakhir Dibaca')),
                                           ElevatedButton(
-                                              style: ElevatedButton.styleFrom(
-                                                  backgroundColor: colorDua),
                                               onPressed: () async {
                                                 await c.addBookmark(false,
                                                     index + 1, ayat!, index);
                                                 homeC.update();
                                               },
-                                              child: const Text('Bookmark')),
+                                              child:
+                                                  const Text('Tandai Bacaan')),
                                         ],
                                       );
                                     },

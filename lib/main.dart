@@ -16,7 +16,7 @@ void main() async {
     GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: themeLight,
-      title: "Application",
+      title: "Baca Al-Qur'an",
       initialRoute: Routes.INTRODUCTION,
       getPages: AppPages.routes,
     ),
