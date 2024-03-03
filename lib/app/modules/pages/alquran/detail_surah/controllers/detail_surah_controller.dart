@@ -92,13 +92,13 @@ class DetailSurahController extends GetxController {
         lastVerse = ayat;
         lastVerse!.kondisiAudio = 'stop';
         update();
-        await player.stop();
         ayat?.isLoading = true;
+        await player.stop();
         await player.setUrl(ayat!.audio!.primary!);
-        ayat.isLoading = false;
         ayat.kondisiAudio = 'playing';
         update();
         await player.play();
+        ayat.isLoading = false;
         ayat.kondisiAudio = 'stop';
         await player.stop();
         update();

@@ -1,11 +1,8 @@
-import 'package:alquran/app/data/models/detail_surah.dart' as detail;
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-
 import 'package:get/get.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
+import '../../../../../data/models/detail_surah.dart' as detail;
 import '../../../../../constants/color.dart';
 import '../../home/controllers/home_controller.dart';
 import '../controllers/detail_surah_controller.dart';
@@ -51,10 +48,12 @@ class DetailSurahView extends GetView<DetailSurahController> {
           }
 
           print(bookmark);
+
           final detail.DetailSurah data = snapshot.data!;
           List<Widget> allAyat =
               List.generate(snapshot.data?.verses?.length ?? 0, (index) {
             final ayat = snapshot.data?.verses?[index];
+
             return AutoScrollTag(
               key: ValueKey(index + 1),
               index: index + 1,
