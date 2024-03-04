@@ -283,7 +283,7 @@ class HomeView extends GetView<HomeController> {
                     text: 'Juz',
                   ),
                   Tab(
-                    text: 'Bookmark',
+                    text: 'Ditandai',
                   ),
                 ],
               ),
