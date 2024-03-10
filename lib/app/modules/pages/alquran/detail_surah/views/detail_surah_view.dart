@@ -292,16 +292,23 @@ class DetailSurahView extends GetView<DetailSurahController> {
                               IconButton(
                                 onPressed: () {
                                   Get.defaultDialog(
-                                      title:
-                                          'Tafsir ${data.name?.transliteration?.id}',
-                                      titleStyle: const TextStyle(
-                                        color: colorEmpat,
+                                    title:
+                                        'Tafsir ${data.name?.transliteration?.id}',
+                                    titleStyle: const TextStyle(
+                                      color: colorEmpat,
+                                    ),
+                                    backgroundColor: colorDua,
+                                    content: SizedBox(
+                                      height: Get.height * 0.3,
+                                      width: Get.width,
+                                      child: SingleChildScrollView(
+                                        child: Text(
+                                          '${data.tafsir?.id}',
+                                          textAlign: TextAlign.start,
+                                        ),
                                       ),
-                                      backgroundColor: colorDua,
-                                      content: Text(
-                                        '${data.tafsir?.id}',
-                                        textAlign: TextAlign.start,
-                                      ));
+                                    ),
+                                  );
                                 },
                                 icon: const Icon(
                                   Icons.info_outline,

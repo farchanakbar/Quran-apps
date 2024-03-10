@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:alquran/app/constants/color.dart';
 import 'package:alquran/app/data/db/bookmark.dart';
-import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 
 import 'package:get/get.dart';
@@ -90,36 +89,40 @@ class DetailJuzController extends GetxController {
   void audioPlayers(Verse? ayat) async {
     if (ayat?.audio?.primary != null) {
       try {
+        ayat?.isLoading = true;
         lastVerse ??= ayat;
         lastVerse!.kondisiAudio = 'stop';
         lastVerse = ayat;
         lastVerse!.kondisiAudio = 'stop';
         update();
-        ayat?.isLoading = true;
         await player.stop();
         await player.setUrl(ayat!.audio!.primary!);
         ayat.kondisiAudio = 'playing';
         update();
         await player.play();
-        ayat.isLoading = false;
         ayat.kondisiAudio = 'stop';
         await player.stop();
+        ayat.isLoading = false;
         update();
       } on PlayerException catch (e) {
-        Get.defaultDialog(
-            title: 'Terjadi Kesalahan',
-            middleText: 'Error message ${e.message}',
-            middleTextStyle: const TextStyle(color: colorEmpat));
+        // iOS/macOS: maps to NSError.code
+        // Android: maps to ExoPlayerException.type
+        // Web: maps to MediaError.code
+        // Linux/Windows: maps to PlayerErrorCode.index
+        print("Error code: ${e.code}");
+        // iOS/macOS: maps to NSError.localizedDescription
+        // Android: maps to ExoPlaybackException.getMessage()
+        // Web/Linux: a generic message
+        // Windows: MediaPlayerError.message
+        print("Error message: ${e.message}");
       } on PlayerInterruptedException catch (e) {
-        Get.defaultDialog(
-            title: 'Terjadi Kesalahan',
-            middleText: "Connection aborted: ${e.message}",
-            middleTextStyle: const TextStyle(color: colorEmpat));
+        // This call was interrupted since another audio source was loaded or the
+        // player was stopped or disposed before this audio source could complete
+        // loading.
+        ayat?.isLoading = false;
+        print("Connection aborted: ${e.message}");
       } catch (e) {
-        Get.defaultDialog(
-            title: 'Terjadi Kesalahan',
-            middleText: 'An error occured: $e',
-            middleTextStyle: const TextStyle(color: colorEmpat));
+        print('An error occured: $e');
       }
     } else {
       Get.defaultDialog(

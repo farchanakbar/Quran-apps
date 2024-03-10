@@ -4,12 +4,17 @@ import 'package:alquran/app/data/models/jadwal_sholat.dart';
 import 'package:alquran/app/data/models/alamat.dart';
 import 'package:get/get.dart';
 import 'package:geolocator/geolocator.dart';
+// import 'package:google_mobile_ads/google_mobile_ads.dart';
+// import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:http/http.dart' as http;
 
 class JadwalSholatController extends GetxController {
   String? provinsi;
   String? kabupaten;
   String? kecamatan;
+
+  // late BannerAd bannerAd;
+  bool isLoad = false;
 
   Future<Position> getLocation() async {
     late bool serviceEnabled;
@@ -59,5 +64,30 @@ class JadwalSholatController extends GetxController {
     var res = await http.get(url);
     Map<String, dynamic> data = (json.decode(res.body) as Map<String, dynamic>);
     return Alamat.fromJson(data);
+  }
+
+  // initBannedAd() {
+  //   bannerAd = BannerAd(
+  //     size: AdSize.banner,
+  //     adUnitId: 'ca-app-pub-3940256099942544/9214589741',
+  //     listener: BannerAdListener(
+  //       onAdLoaded: (ad) {
+  //         isLoad = true;
+  //       },
+  //       onAdFailedToLoad: (ad, error) {
+  //         ad.dispose();
+  //         print('gagal');
+  //       },
+  //     ),
+  //     request: const AdRequest(),
+  //   );
+
+  //   bannerAd.load();
+  // }
+
+  @override
+  void onInit() {
+    super.onInit();
+    // initBannedAd();
   }
 }

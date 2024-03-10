@@ -1,23 +1,40 @@
 import 'package:get/get.dart';
+// import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class IntroductionController extends GetxController {
-  //TODO: Implement IntroductionController
+  // //TODO: Implement IntroductionController
+  // late BannerAd bannerAd;
+  // bool isLoad = false;
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
+  // initBannedAd() {
+  //   bannerAd = BannerAd(
+  //     size: AdSize.banner,
+  //     adUnitId: 'ca-app-pub-3940256099942544/6300978111',
+  //     listener: BannerAdListener(
+  //       onAdLoaded: (ad) {
+  //         isLoad = true;
+  //       },
+  //       onAdFailedToLoad: (ad, error) {
+  //         ad.dispose();
+  //         print('gagal');
+  //       },
+  //     ),
+  //     request: const AdRequest(),
+  //   );
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
+  //   bannerAd.load();
+  // }
 
+  // @override
+  // void onInit() {
+  //   // TODO: implement onInit
+  //   super.onInit();
+  //   initBannedAd();
+  // }
   @override
   void onClose() {
+    // TODO: implement onClose
     super.onClose();
+    print('keluar');
   }
-
-  void increment() => count.value++;
 }

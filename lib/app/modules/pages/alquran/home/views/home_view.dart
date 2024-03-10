@@ -25,7 +25,6 @@ class HomeView extends GetView<HomeController> {
             horizontal: 20,
           ),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               GetBuilder<HomeController>(
                 builder: (c) {

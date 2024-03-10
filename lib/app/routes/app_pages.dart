@@ -1,5 +1,3 @@
-import 'package:alquran/app/modules/pages/doa/doa/views/doa_view.dart';
-import 'package:alquran/app/modules/pages/doa/doa_harian/views/doa_harian_view.dart';
 import 'package:get/get.dart';
 
 import '../modules/bottom_bar/bindings/bottom_bar_binding.dart';
@@ -17,7 +15,9 @@ import '../modules/pages/alquran/last_read/views/last_read_view.dart';
 import '../modules/pages/doa/asmaul_husna/bindings/asmaul_husna_binding.dart';
 import '../modules/pages/doa/asmaul_husna/views/asmaul_husna_view.dart';
 import '../modules/pages/doa/doa/bindings/doa_binding.dart';
+import '../modules/pages/doa/doa/views/doa_view.dart';
 import '../modules/pages/doa/doa_harian/bindings/doa_harian_binding.dart';
+import '../modules/pages/doa/doa_harian/views/doa_harian_view.dart';
 import '../modules/pages/doa/niat_sholat/bindings/niat_sholat_binding.dart';
 import '../modules/pages/doa/niat_sholat/views/niat_sholat_view.dart';
 import '../modules/pages/sholat/detail_jadwal/bindings/detail_jadwal_binding.dart';

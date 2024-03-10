@@ -4,6 +4,7 @@ import 'package:alquran/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+// import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:intl/intl.dart';
 
 import '../../../../../../../../widgets/jadwal.dart';
@@ -53,6 +54,13 @@ class JadwalSholatView extends GetView<JadwalSholatController> {
                 padding: const EdgeInsets.all(10),
                 child: Column(
                   children: [
+                    // controller.isLoad
+                    //     ? SizedBox(
+                    //         height: controller.bannerAd.size.height.toDouble(),
+                    //         width: controller.bannerAd.size.width.toDouble(),
+                    //         child: AdWidget(ad: controller.bannerAd),
+                    //       )
+                    //     : const SizedBox(),
                     Card(
                       color: colorDua,
                       child: Padding(

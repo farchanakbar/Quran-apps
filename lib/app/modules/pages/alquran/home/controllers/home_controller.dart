@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+// import 'package:alquran/addmob_helper.dart';
 import 'package:alquran/app/data/db/bookmark.dart';
 import 'package:alquran/app/data/models/surah.dart';
 import 'package:get/get.dart';
@@ -7,6 +8,7 @@ import 'package:http/http.dart' as http;
 import 'package:sqflite/sqflite.dart';
 
 class HomeController extends GetxController {
+  // AddMobHelper addMobHelper = AddMobHelper();
   List<Surah> allSurah = [];
 
   DatabaseManager database = DatabaseManager.instance;
